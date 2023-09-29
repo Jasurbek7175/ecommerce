@@ -6,25 +6,24 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreOrderRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
+
     public function authorize()
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
+
     public function rules()
     {
+
         return [
-            //
+            'delivery_method_id' => 'required|numeric',
+            'payment_type_id' => 'required|numeric',
+            'product' => 'required',
+            'product.*.product_id' => 'required|numeric',
+            'product.*.quantity' => 'required|numeric',
+            'product.*.stock_id' => 'required|numeric',
+            'comment' => 'nullable|max:500'
         ];
     }
 }

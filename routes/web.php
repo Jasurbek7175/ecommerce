@@ -10,7 +10,11 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use App\Http\Controllers\FavoriteController;
-
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\DeliveryMethodController;
+use App\Http\Controllers\UserPaymentCardsController;
+use App\Http\Controllers\PaymentTypeController;
+use App\Http\Controllers\UserAddressController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +44,11 @@ Route::apiResources([
     'categories.products' => CategoryProductController::class,
     'favorites' => FavoriteController::class,
     'products' => ProductController::class,
+    'orders' => OrderController::class,
+    'delivery-methods' => DeliveryMethodController::class,
+    'payment-types' => PaymentTypeController::class,
+    'user-addresses' => UserAddressController::class,
+    'user-payment-cards' => UserPaymentCardsController::class
 
 ]);
 
