@@ -15,6 +15,9 @@ use App\Http\Controllers\DeliveryMethodController;
 use App\Http\Controllers\UserPaymentCardsController;
 use App\Http\Controllers\PaymentTypeController;
 use App\Http\Controllers\UserAddressController;
+use App\Http\Controllers\StatusController;
+use App\Http\Controllers\StatusOrderController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,7 +51,8 @@ Route::apiResources([
     'delivery-methods' => DeliveryMethodController::class,
     'payment-types' => PaymentTypeController::class,
     'user-addresses' => UserAddressController::class,
-    'user-payment-cards' => UserPaymentCardsController::class
-
+    'user-payment-cards' => UserPaymentCardsController::class,
+    'statuses' => StatusController::class,
+    'statuses.orders' => StatusOrderController::class,
 ]);
 

@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->foreignId('payment_type_id')->constrained();
             $table->text('comment')->nullable();
             $table->unsignedBigInteger('sum');
-//            $table->text('address')->nullable();
+            $table->foreignId('status_id')->default(1)->constrained();
             $table->json('products');
             $table->json('address');
             $table->timestamps();
